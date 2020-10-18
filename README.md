@@ -1,0 +1,2 @@
+# CharacterGeneratorTBH
+A personal project to make an application in java that allows someone to create a full pathfinder player character with the base game classes and races. Ideally this will end in outputting the character into a formatted text file with all of the math for bonuses completed for them without outside input. I recognize there are web applications that accomplish this need but I wanted to create my own version.
