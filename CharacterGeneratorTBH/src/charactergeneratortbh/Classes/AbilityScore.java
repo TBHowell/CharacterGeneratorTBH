@@ -1,10 +1,10 @@
 /**
  * @author Trent Howell (howellt@spu.edu) TBHowell on Github
- * @file CharacterRace.java
+ * @file AbilityScore.java
  */
 package charactergeneratortbh.Classes;
 
-public class CharacterRace 
+public enum AbilityScore 
 {
-    
+    STR,DEX,CON,INT,WIS,CHA
 }
