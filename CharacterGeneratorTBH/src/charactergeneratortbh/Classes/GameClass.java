@@ -4,7 +4,7 @@
  */
 package charactergeneratortbh.Classes;
 
-public class CharacterClass 
+public class GameClass 
 {
     String CN; // Class Name
     int HD; // Class Hit Die
@@ -18,7 +18,7 @@ public class CharacterClass
     AbilityScore AB; // Weapon Ability Score Modifier
     
     //Default constructor that creates an invalid class, should somehow a new class be created without data
-    public CharacterClass()
+    public GameClass()
     {
         this.CN = "NO_NAME_GIVEN";
         this.HD = -1;
@@ -33,7 +33,7 @@ public class CharacterClass
     }
     
     //Constructor to fill out class data
-    public CharacterClass(String cn, int hd, String[] sk, int sr, int bab, int[] sv, String[] f, int[] w, String[] p, AbilityScore ab) {
+    public GameClass(String cn, int hd, String[] sk, int sr, int bab, int[] sv, String[] f, int[] w, String[] p, AbilityScore ab) {
         this.CN = cn;
         this.HD = hd;
         this.SK = sk;
