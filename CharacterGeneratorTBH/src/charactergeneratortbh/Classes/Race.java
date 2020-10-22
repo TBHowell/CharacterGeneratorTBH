@@ -19,7 +19,7 @@ public class Race
                 roll, 3 is the inches multiplyer to apply to the dice roll.
             */
     int SP; // Speed
-    char SZ; // Size
+    String SZ; // Size
     String[] L; /* Languages
                    For this array 0 to LKL are already known languages, every
                    index after is possible languages to choose from if the 
@@ -36,7 +36,7 @@ public class Race
         this.A = new int[]{-1,-1,-1,-1};
         this.H = new int[]{-1,-1,-1,-1};
         this.SP = -1;
-        this.SZ = ' ';
+        this.SZ = "NO_SIZE_DATA";
         this.L = new String[]{"NO_LANGUAGE_DATA"};
         this.M = new int[]{-1,-1,-1,-1,-1,-1};
         this.F = new Feature[]{};
@@ -44,7 +44,7 @@ public class Race
     }
     
     //Constructor to fill out race data
-    public Race(int[] a, int[] h, int sp, char sz, String[] l, int[] m, Feature[] f, String v)
+    public Race(int[] a, int[] h, int sp, String sz, String[] l, int[] m, Feature[] f, String v)
     {
         this.A = a;
         this.H = h;
@@ -90,5 +90,11 @@ public class Race
         //Adds the additional height (multiplied by the height multiplier) to starting height and returns
         Height += (A[3] * Additional);
         return Height;
+    }
+    
+    //This gets the size modifier of the race, takes in wether being small is good or bad for this modifier
+    public int GetSizeMod(boolean GS)
+    {
+        return 0;
     }
 }

@@ -12,7 +12,7 @@ public class GameClass
     int SR; // Skill Ranks
     int BAB; // Base Attack Bonus
     int[] SV; // Saving Throw Bonuses
-    String[] F; // Class Features
+    Feature[] F; // Class Features
     int[] W; // Wealth
     String[] P; // Weapon and Armor Proficiencies
     AbilityScore AB; // Weapon Ability Score Modifier
@@ -26,14 +26,14 @@ public class GameClass
         this.SR = -1;
         this.BAB = -1;
         this.SV = new int[]{-1,-1,-1};
-        this.F = new String[]{"NO_FEATURES_GIVEN"};
+        this.F = new Feature[] {new Feature()};
         this.W = new int[]{-1,-1,-1,-1};
         this.P = new String[]{"NO_WEAPON_PROFICIENCIES_GIVEN"};
         this.AB = AbilityScore.WIS;
     }
     
     //Constructor to fill out class data
-    public GameClass(String cn, int hd, String[] sk, int sr, int bab, int[] sv, String[] f, int[] w, String[] p, AbilityScore ab) {
+    public GameClass(String cn, int hd, String[] sk, int sr, int bab, int[] sv, Feature[] f, int[] w, String[] p, AbilityScore ab) {
         this.CN = cn;
         this.HD = hd;
         this.SK = sk;
