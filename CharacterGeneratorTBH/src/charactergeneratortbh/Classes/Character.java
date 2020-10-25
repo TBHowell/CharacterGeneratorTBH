@@ -47,7 +47,6 @@ public class Character {
     public void AddRace(Race R, int H, int A)
     {
         CR = R;
-        CF = R.F;
     }
     
     //Adds Character Class on the fourth part of creation
@@ -56,7 +55,7 @@ public class Character {
         CC = C;
         CH = CC.HD;
         CalcCombat();
-        CF = AddFeatures(C.F);
+        CF = AddFeatures(new String[] {"TOFIX"});
         CM = C.W;
         
     }
@@ -134,18 +133,11 @@ public class Character {
     }
     
     // Handler to add new features to the character's feature list
-    public Feature[] AddFeatures(Feature[] add)
+    public Feature[] AddFeatures(String[] add)
     {
-        Feature[] current = CF;
+        Feature[] NF = new Feature[] {};
         
-        int len1 = current.length;
-        int len2 = add.length;
-        
-        Feature[] NF = new Feature[len1 + len2];
-        
-        System.arraycopy(current, 0, NF, 0, len1);
-        System.arraycopy(add, 0, NF, len1, len2);
-        
+        //TODO change from an array to an array list and then add features to the character features should the feature name match the string in included array
         return NF;
     }
 }

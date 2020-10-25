@@ -5,6 +5,8 @@
 package charactergeneratortbh.Classes;
 
 import java.util.Random; 
+import java.util.List;
+import java.util.ArrayList;
 
 public class Race 
 {
@@ -22,33 +24,33 @@ public class Race
             */
     int SP; // Speed
     String SZ; // Size
-    String[] L; /* Languages
+    List<String> L = new ArrayList<>(); /* Languages
                    For this array 0 to LKL are already known languages, every
                    index after is possible languages to choose from if the 
                    character's intelligence is high enough */
     int[] M; /* Ability Modifiers 
                 For this array 0 index is STR, 1 is DEX, 2 is CON, 3 is INT,
                 4 is WIS, 5 is CHA */
-    Feature[] F; // Race Features
+    List<String> F = new ArrayList<>(); // Race Features
     String V; // Vision Type
     
     //Defalut Constructor that creates an invalid race, should somehow a new race be created without data
     public Race()
     {
-        this.RN = "NO_RACE_NAME_DATA";
-        this.RD = "NO_RACE_DESCRIPTION_DATA";
+        this.RN = "NO_NAME_DATA";
+        this.RD = "NO_DESCRIPTION_DATA";
         this.A = new int[]{-1,-1,-1,-1};
         this.H = new int[]{-1,-1,-1,-1};
         this.SP = -1;
         this.SZ = "NO_SIZE_DATA";
-        this.L = new String[]{"NO_LANGUAGE_DATA"};
+        this.F.add("NO_FEATURE_DATA");
         this.M = new int[]{-1,-1,-1,-1,-1,-1};
-        this.F = new Feature[]{};
-        this.V = "NO_VISION_DATA";           
+        this.L.add("NO_LANGUAGE_DATA");
+        this.V = "NO_VISION_DATA";          
     }
     
     //Constructor to fill out race data
-    public Race(String rn, String rd, int[] a, int[] h, int sp, String sz, String[] l, int[] m, Feature[] f, String v)
+    public Race(String rn, String rd, int[] a, int[] h, int sp, String sz, List<String> l, int[] m, List<String> f, String v)
     {
         this.RN = rn;
         this.RD = rd;
