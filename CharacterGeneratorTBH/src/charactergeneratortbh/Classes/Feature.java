@@ -11,7 +11,7 @@ public class Feature
     boolean MV; // Modifies a Value
     boolean MS; // Modifies a Skill
     boolean MA; // Modifies another Attribute
-    String MVN; // Modified Value Name
+    String[] MVN; // Modified Value(s) Name
     int M; // Modifier
     
     //Defalut Constructor that creates an invalid feature, should somehow a new feature be created without data
@@ -22,12 +22,12 @@ public class Feature
         this.MV = false;
         this.MS = false;
         this.MA = false;
-        this.MVN = "NO_MODIFIED_VALUE_GIVEN";
+        this.MVN = new String[] {"NO_MODIFIED_VALUE_GIVEN"};
         this.M = -1;
     }
     
     //Constructor to fill out feature data
-    public Feature(String n, String d, boolean mv, boolean ms, boolean ma, String mvn, int m)
+    public Feature(String n, String d, boolean mv, boolean ms, boolean ma, String[] mvn, int m)
     {
         this.N = n;
         this.D = d;

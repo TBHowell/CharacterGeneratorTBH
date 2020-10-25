@@ -9,6 +9,8 @@ import java.util.Random;
 public class Race 
 {
     Random Roller = new Random(); // A random object to do our dice rolls
+    String RN; // Race Name
+    String RD; // Race Description
     int[] A; /* Age Data
                 For this array 0 index is starting age, 1 is which die to roll
                 for additional years, 2 is how many of those dice to roll, 3 is
@@ -33,6 +35,8 @@ public class Race
     //Defalut Constructor that creates an invalid race, should somehow a new race be created without data
     public Race()
     {
+        this.RN = "NO_RACE_NAME_DATA";
+        this.RD = "NO_RACE_DESCRIPTION_DATA";
         this.A = new int[]{-1,-1,-1,-1};
         this.H = new int[]{-1,-1,-1,-1};
         this.SP = -1;
@@ -44,8 +48,10 @@ public class Race
     }
     
     //Constructor to fill out race data
-    public Race(int[] a, int[] h, int sp, String sz, String[] l, int[] m, Feature[] f, String v)
+    public Race(String rn, String rd, int[] a, int[] h, int sp, String sz, String[] l, int[] m, Feature[] f, String v)
     {
+        this.RN = rn;
+        this.RD = rd;
         this.A = a;
         this.H = h;
         this.SP = sp;

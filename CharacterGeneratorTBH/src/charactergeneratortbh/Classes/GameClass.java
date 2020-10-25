@@ -7,6 +7,7 @@ package charactergeneratortbh.Classes;
 public class GameClass 
 {
     String CN; // Class Name
+    String CD; // Class Description
     int HD; // Class Hit Die
     String[] SK; // Class Skills
     int SR; // Skill Ranks
@@ -21,6 +22,7 @@ public class GameClass
     public GameClass()
     {
         this.CN = "NO_NAME_GIVEN";
+        this.CD = "NO_DESCRIPTION_DATA";
         this.HD = -1;
         this.SK = new String[]{"NO_SKILLS_GIVEN"};
         this.SR = -1;
@@ -33,8 +35,9 @@ public class GameClass
     }
     
     //Constructor to fill out class data
-    public GameClass(String cn, int hd, String[] sk, int sr, int bab, int[] sv, Feature[] f, int[] w, String[] p, AbilityScore ab) {
+    public GameClass(String cn, String cd, int hd, String[] sk, int sr, int bab, int[] sv, Feature[] f, int[] w, String[] p, AbilityScore ab) {
         this.CN = cn;
+        this.CD = cd;
         this.HD = hd;
         this.SK = sk;
         this.SR = sr;

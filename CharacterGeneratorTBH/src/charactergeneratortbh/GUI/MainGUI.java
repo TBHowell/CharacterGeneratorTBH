@@ -1,16 +1,13 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/**
+ * @author Trent Howell (howellt@spu.edu) TBHowell on Github
+ * @file MainGUI.java
  */
 package charactergeneratortbh.GUI;
 
-/**
- *
- * @author howel
- */
 public class MainGUI extends javax.swing.JFrame {
-
+    
+    String path = System.getProperty("user.dir") + "\\resources";
+    
     /**
      * Creates new form MainGUI
      */

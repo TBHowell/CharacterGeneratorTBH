@@ -1,0 +1,12 @@
+Dagger
+A dagger has a blade that is about 1 foot in length.
+0
+4
+10
+1
+2
+Melee
+P
+Simple
+NEXT
+
