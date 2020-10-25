@@ -41,9 +41,13 @@ public class RacePopulator {
             //If keyword NEXT is used then check lineCounter
             if (data.equals("NEXT"))
             {   
-                //If line counter indicates 21 then we know all the race data should be collected reset lineCounter
+                //If line counter indicates 21 then we know all the race data should be collected reset necessary variables
                 if (lineCounter == 21)
+                {
                     lineCounter = 0;
+                    FRD = new ArrayList<>();
+                    LRD = new ArrayList<>();
+                }
                 //Otherwise throw an error indicating not all the necessary data has been collected
                 else
                     System.err.println("ERROR, keyword NEXT used but data for this weapon is missing");

@@ -67,7 +67,7 @@ public class Character {
         
         for(int i = 0; i < CS.length; i++)
         {
-            if(CS[i].SN == sn[ri])
+            if(CS[i].SN.equals(sn[ri]))
             {
                 CS[i].R += 1;
                 ri++;
