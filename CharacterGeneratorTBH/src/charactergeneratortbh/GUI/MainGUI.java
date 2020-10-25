@@ -4,9 +4,9 @@
  */
 package charactergeneratortbh.GUI;
 
+import javax.swing.JOptionPane;
+
 public class MainGUI extends javax.swing.JFrame {
-    
-    String path = System.getProperty("user.dir") + "\\resources";
     
     /**
      * Creates new form MainGUI
@@ -77,4 +77,9 @@ public class MainGUI extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     // End of variables declaration//GEN-END:variables
+    
+    public void ErrorMessage(String Error)
+    {
+        JOptionPane.showMessageDialog(null, Error, "ERROR", JOptionPane.INFORMATION_MESSAGE);
+    }
 }

@@ -9,7 +9,7 @@ import java.util.List;
 
 public class Feature 
 {
-    String N; // Feature Name
+    public String N; // Feature Name
     String D; // Feature Description
     boolean MV; // Modifies a Value
     boolean MS; // Modifies a Skill

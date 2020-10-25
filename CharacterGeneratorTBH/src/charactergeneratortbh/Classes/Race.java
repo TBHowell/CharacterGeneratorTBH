@@ -31,7 +31,7 @@ public class Race
     int[] M; /* Ability Modifiers 
                 For this array 0 index is STR, 1 is DEX, 2 is CON, 3 is INT,
                 4 is WIS, 5 is CHA */
-    List<String> F = new ArrayList<>(); // Race Features
+    public List<String> F = new ArrayList<>(); // Race Features
     String V; // Vision Type
     
     //Defalut Constructor that creates an invalid race, should somehow a new race be created without data

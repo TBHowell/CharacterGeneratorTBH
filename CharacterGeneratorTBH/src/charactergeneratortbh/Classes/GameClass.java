@@ -11,13 +11,13 @@ public class GameClass
 {
     String CN; // Class Name
     String CD; // Class Description
-    int HD; // Class Hit Die
+    public int HD; // Class Hit Die
     List<String> SK = new ArrayList<>(); // Class Skills
     int SR; // Skill Ranks
     int BAB; // Base Attack Bonus
     int[] SV; // Saving Throw Bonuses
-    List<String> F = new ArrayList<>(); // Class Features
-    int[] W; // Wealth
+    public List<String> F = new ArrayList<>(); // Class Features
+    public int[] W; // Wealth
     List<String> P = new ArrayList<>(); // Weapon and Armor Proficiencies
     AbilityScore AB; // Weapon Ability Score Modifier
     

@@ -6,11 +6,11 @@ package charactergeneratortbh.Classes;
 
 public class Skill 
 {
-    String SN; // Skill Name
+    public String SN; // Skill Name
     boolean CS; // Class Skill
     AbilityScore AS; // Ability Score associated with skill
     int MM; // Miscillaneous Modifiers
-    int R; // Skill Ranks
+    public int R; // Skill Ranks
     int TSM; // Total Skill Modifier
     
     //Defalut Constructor that creates an invalid skill, should somehow a new skill be created without data
