@@ -13,5 +13,5 @@ Simple,Martial,Light,Medium,Shields
 105
 0
 0
-WIS
+4
 NEXT

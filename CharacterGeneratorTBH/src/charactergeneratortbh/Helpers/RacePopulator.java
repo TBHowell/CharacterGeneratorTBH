@@ -50,7 +50,7 @@ public class RacePopulator {
                 }
                 //Otherwise throw an error indicating not all the necessary data has been collected
                 else
-                    System.err.println("ERROR, keyword NEXT used but data for this weapon is missing");
+                    System.err.println("ERROR, keyword NEXT used but data for this race is missing");
                 
                 //Only approach this if no error is thrown, create a new race with collected data and put it in the list
                 Races.add(new Race(SRD[0], SRD[1], ARD, HRD, SPRD, SRD[2], LRD, MRD, FRD, SRD[3]));

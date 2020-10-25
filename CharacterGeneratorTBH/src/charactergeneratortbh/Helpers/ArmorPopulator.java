@@ -14,7 +14,7 @@ import java.util.Scanner;
 
 public class ArmorPopulator {
 
-    // An array list of Race so that we can dynamically fill the array
+    // An array list of Armor so that we can dynamically fill the array
     private List<Armor> Armor = new ArrayList<>();
     
     public ArmorPopulator(String path) throws FileNotFoundException
@@ -24,8 +24,8 @@ public class ArmorPopulator {
         String data; // String to contain the current line of data we're getting from the file
         int lineCounter = 0; // lineCounter to track what kind of data we're looking at
         
-        String[] SAD = new String[] {"","",""}; // String Weapon Data
-        int[] IAD = new int[] {0,0,0,0,0}; // Integer Weapon Data
+        String[] SAD = new String[] {"","",""}; // String Armor Data
+        int[] IAD = new int[] {0,0,0,0,0}; // Integer Armor Data
         
         //Starts streaming in data while data still exists in the file
         while(read.hasNextLine())
@@ -35,14 +35,14 @@ public class ArmorPopulator {
             //If keyword NEXT is used then check lineCounter
             if (data.equals("NEXT"))
             {   
-                //If line counter indicates 10 then we know all the race data should be collected reset lineCounter
+                //If line counter indicates 8 then we know all the Armor data should be collected reset lineCounter
                 if (lineCounter == 8)
                     lineCounter = 0;
                 //Otherwise throw an error indicating not all the necessary data has been collected
                 else
-                    System.err.println("ERROR, keyword NEXT used but data for this weapon is missing");
+                    System.err.println("ERROR, keyword NEXT used but data for this armor is missing");
                 
-                //Only approach this if no error is thrown, create a new weapon with collected data and put it in the list
+                //Only approach this if no error is thrown, create a new armor with collected data and put it in the list
                 Armor.add(new Armor(SAD[0], SAD[1], IAD[0], IAD[1], IAD[2], IAD[3], IAD[4], SAD[2]));
             }
             //If on the 0th to 1st line fill the first two slots of String data
@@ -71,8 +71,8 @@ public class ArmorPopulator {
         }
     }
     
-    //Getter function to allow for the collections of the Weapon list
-    public List<Armor> getWeapons()
+    //Getter function to allow for the collections of the Armor list
+    public List<Armor> getArmor()
     {
         return Armor;
     }

@@ -16,7 +16,7 @@ import java.util.Collections;
 
 public class ClassPopulator {
 
-    // An array list of Race so that we can dynamically fill the array
+    // An array list of GameClass so that we can dynamically fill the array
     private List<GameClass> Classes = new ArrayList<>();
     
     public ClassPopulator(String path) throws FileNotFoundException
@@ -25,6 +25,7 @@ public class ClassPopulator {
         Scanner read = new Scanner(file); // Scanner to take in data from the Class file
         String data; // String to contain the current line of data we're getting from the file
         int lineCounter = 0; // lineCounter to track what kind of data we're looking at
+        AbilityScore[] AS = AbilityScore.values(); // Array to hold the different values of AbilityScores
         
         String[] SCD = new String[] {"",""}; // String Class Data
         int[] ICD = new int[] {0,0,0}; // Integer Class Data
@@ -43,7 +44,7 @@ public class ClassPopulator {
             //If keyword NEXT is used then check lineCounter
             if (data.equals("NEXT"))
             {   
-                //If line counter indicates 16 then we know all the race data should be collected reset necessary variables
+                //If line counter indicates 16 then we know all the game class data should be collected reset necessary variables
                 if (lineCounter == 16)
                 {
                     lineCounter = 0;
@@ -53,9 +54,9 @@ public class ClassPopulator {
                 }
                 //Otherwise throw an error indicating not all the necessary data has been collected
                 else
-                    System.err.println("ERROR, keyword NEXT used but data for this weapon is missing");
+                    System.err.println("ERROR, keyword NEXT used but data for this class is missing");
                 
-                //Only approach this if no error is thrown, create a new race with collected data and put it in the list
+                //Only approach this if no error is thrown, create a new game class with collected data and put it in the list
                 Classes.add(new GameClass(SCD[0], SCD[1], ICD[0], SKCD, ICD[1], ICD[2], SVCD, FCD, WCD, PCD, ACD));
             }
             //If on the 0th to 1st line fill the String data
@@ -106,18 +107,7 @@ public class ClassPopulator {
             //If on the 15th line fill the Ability Score data
             else if (lineCounter == 15)
             {
-                if (data.equals("WIS"))
-                    ACD = AbilityScore.WIS;
-                else if (data.equals("CHA"))
-                    ACD = AbilityScore.CHA;
-                else if (data.equals("INT"))
-                    ACD = AbilityScore.INT;
-                else if (data.equals("STR"))
-                    ACD = AbilityScore.STR;
-                else if (data.equals("CON"))
-                    ACD = AbilityScore.CON;
-                else if (data.equals("DEX"))
-                    ACD = AbilityScore.DEX;
+                ACD = AS[Integer.parseInt(data)];
                 lineCounter++;
             }
             //If somehow more data exists on the 16th line then throw an error indicating too much data
@@ -128,8 +118,8 @@ public class ClassPopulator {
         }
     }
     
-    //Getter function to allow for the collections of the Class list
-    public List<GameClass> getRaces()
+    //Getter function to allow for the collection of the Class list
+    public List<GameClass> getClasses()
     {
         return Classes;
     }

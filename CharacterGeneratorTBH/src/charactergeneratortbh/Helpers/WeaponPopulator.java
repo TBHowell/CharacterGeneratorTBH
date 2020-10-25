@@ -15,7 +15,7 @@ import java.util.Scanner;
 
 public class WeaponPopulator 
 {
-    // An array list of Race so that we can dynamically fill the array
+    // An array list of Weapon so that we can dynamically fill the array
     private List<Weapon> Weapons = new ArrayList<>();
     
     public WeaponPopulator(String path) throws FileNotFoundException
@@ -38,7 +38,7 @@ public class WeaponPopulator
             //If keyword NEXT is used then check lineCounter
             if (data.equals("NEXT"))
             {   
-                //If line counter indicates 10 then we know all the race data should be collected reset lineCounter
+                //If line counter indicates 10 then we know all the weapon data should be collected reset lineCounter
                 if (lineCounter == 10)
                     lineCounter = 0;
                 //Otherwise throw an error indicating not all the necessary data has been collected
