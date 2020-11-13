@@ -9,11 +9,11 @@ import java.util.ArrayList;
 
 public class GameClass 
 {
-    String CN; // Class Name
-    String CD; // Class Description
+    public String CN; // Class Name
+    public String CD; // Class Description
     public int HD; // Class Hit Die
     List<String> SK = new ArrayList<>(); // Class Skills
-    int SR; // Skill Ranks
+    public int SR; // Skill Ranks
     int BAB; // Base Attack Bonus
     int[] SV; // Saving Throw Bonuses
     public List<String> F = new ArrayList<>(); // Class Features

@@ -6,14 +6,14 @@ package charactergeneratortbh.Classes;
 
 public class Weapon 
 {
-    String WN; // Weapon Name
-    String WD; // Weapon Description
+    public String WN; // Weapon Name
+    public String WD; // Weapon Description
     int THB; // To Hit Bonus
     int DB; // Damage Bonus
     int DD; // Damage Die
     int WR; // Weapon Range (if applicable)
     int WA; // Weapon Ammo (if applicable)
-    int WP; // Weapon Price in Gold
+    public int WP; // Weapon Price in Gold
     boolean WT; // Weapon Type (Ranged/Melee) 
     char DT; // Damage Type
     String WC; // Weapon Category (Simple/Martial/Natural)

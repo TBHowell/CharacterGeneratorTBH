@@ -7,7 +7,6 @@ package charactergeneratortbh.Control;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Collections;
 import java.io.FileNotFoundException;
 
 import charactergeneratortbh.Classes.*;
@@ -23,10 +22,22 @@ public class Controller
     List<Armor> OurArmor = new ArrayList<>();
     List<Race> OurRaces = new ArrayList<>();
     List<GameClass> OurClasses = new ArrayList<>();
-    GameCharacter OurCharacter;
+    public GameCharacter OurCharacter;
+    
+    public String WeaponList;
+    public String[] Races;
+    public String[] Classes;
+    public String[] Features;
+    public String[] Weapons;
+    public String[] Armors;
+    
+    int[] AS;
     
     public Controller()
     {
+        MainGUI GUI = new MainGUI(this);
+        WeaponList = "Weapons: \n";
+        
         try 
         {
             SkillPopulator SP = new SkillPopulator(path+"//Skills.txt");
@@ -44,8 +55,45 @@ public class Controller
         }
         catch(FileNotFoundException ex)
         {
-            //GUI.ErrorMessage(ex);
+            GUI.ErrorMessage(ex.getMessage());
+            System.out.println("ERROR FileNotFound");
         }
+        
+        List<String> temp = new ArrayList<>();
+        for(int i = 0; i < OurRaces.size(); i++)
+        {
+            temp.add(OurRaces.get(i).RN);
+        }
+        Races = new String[temp.size()];
+        Races = temp.toArray(Races);
+        temp = new ArrayList<>();
+        for(int i = 0; i < OurClasses.size(); i++)
+        {
+            temp.add(OurClasses.get(i).CN);
+        }
+        Classes = new String[temp.size()];
+        Classes = temp.toArray(Classes);
+        temp = new ArrayList<>();
+        for(int i = 0; i <OurFeatures.size(); i++)
+        {
+            temp.add(OurFeatures.get(i).N);
+        }
+        Features = new String[temp.size()];
+        Features = temp.toArray(Features);
+        temp = new ArrayList<>();
+        for(int i = 0; i < OurWeapons.size(); i++)
+        {
+            temp.add(OurWeapons.get(i).WN);
+        }
+        Weapons = new String[temp.size()];
+        Weapons = temp.toArray(Weapons);
+        temp = new ArrayList<>();
+        for(int i = 0; i < OurArmor.size(); i++)
+        {
+            temp.add(OurArmor.get(i).AN);
+        }
+        Armors = new String[temp.size()];
+        Armors = temp.toArray(Armors);
     }
     
     public void StartCharacter(String pn, String cn)
@@ -145,5 +193,91 @@ public class Controller
        }
        
        OurCharacter.CF.addAll(NF);
+    }
+    
+    public String GetRaceInfo(int index)
+    {
+        String Desc = OurRaces.get(index).RD;
+        return Desc;
+    }
+    
+    public String GetClassInfo(int index)
+    {
+        String Desc = OurClasses.get(index).CD;
+        return Desc;
+    }
+    
+    public int GetSkillRanks()
+    {
+        int SR = OurCharacter.CC.SR + OurCharacter.AM[3];
+        return SR;
+    }
+    
+    public String GetFeatureInfo(int index)
+    {
+        String Desc = OurFeatures.get(index).D;
+        return Desc;
+    }
+    
+    public String GetWeaponInfo(int index)
+    {
+        String Desc = OurWeapons.get(index).WD;
+        return Desc;
+    }
+    
+    public String GetArmorInfo(int index)
+    {
+        String Desc = OurArmor.get(index).AD;
+        return Desc;
+    }
+    
+    public String GetWeaponCost(int index)
+    {
+        String Price = OurWeapons.get(index).WP + " Gold";
+        return Price;
+    }
+    
+    public String GetGold()
+    {
+        return "Current Gold: " + OurCharacter.CM[1];
+    }
+    
+    public void AddWeapon(int index)
+    {
+        WeaponList += OurWeapons.get(index).WN + "\n";
+        OurCharacter.CW.add(OurWeapons.get(index));
+        OurCharacter.CM[1] -= OurWeapons.get(index).WP;
+    }
+    
+    public String FinalCharacterDetails()
+    {
+        //TODO create a string containing all of the character details formated and return
+        return "Nothing here yet";
+    }
+    
+    public String GetName()
+    {
+        return OurCharacter.CD[0];
+    }
+    
+    public void RollAbilities()
+    {
+        AS = new int[] {0,0,0,0,0,0};
+        AS[0] = (int)(Math.random() * 17 + 2);
+        AS[1] = (int)(Math.random() * 17 + 2);
+        AS[2] = (int)(Math.random() * 17 + 2);
+        AS[3] = (int)(Math.random() * 17 + 2);
+        AS[4] = (int)(Math.random() * 17 + 2);
+        AS[5] = (int)(Math.random() * 17 + 2);
+    }
+    
+    public int[] GetAS()
+    {
+        return AS;
+    }
+    
+    public void SetAS(int[] OurAS)
+    {
+        OurCharacter.AS = OurAS;
     }
 }

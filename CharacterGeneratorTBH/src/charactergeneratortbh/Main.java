@@ -4,10 +4,17 @@
  */
 package charactergeneratortbh;
 
+import charactergeneratortbh.Control.*;
+import charactergeneratortbh.GUI.*;
+import charactergeneratortbh.Classes.*;
+import charactergeneratortbh.Helpers.*;
+import java.io.FileNotFoundException;
+
 public class Main 
 {   
     public static void main(String[] args) 
     {
-        // TODO code application logic here
+        Controller Control = new Controller();
+        
     }
 }

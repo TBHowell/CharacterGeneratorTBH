@@ -3,15 +3,9 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/howel/Documents/GitHub/CharacterGeneratorTBH/CharacterGeneratorTBH/src/charactergeneratortbh/Helpers/WeaponPopulator.java</file>
             <file>file:/C:/Users/howel/Documents/GitHub/CharacterGeneratorTBH/CharacterGeneratorTBH/src/charactergeneratortbh/GUI/MainGUI.java</file>
-            <file>file:/C:/Users/howel/Documents/GitHub/CharacterGeneratorTBH/CharacterGeneratorTBH/src/charactergeneratortbh/Classes/Weapon.java</file>
-            <file>file:/C:/Users/howel/Documents/GitHub/CharacterGeneratorTBH/CharacterGeneratorTBH/src/charactergeneratortbh/Classes/Skill.java</file>
-            <file>file:/C:/Users/howel/Documents/GitHub/CharacterGeneratorTBH/CharacterGeneratorTBH/src/charactergeneratortbh/Classes/Armor.java</file>
-            <file>file:/C:/Users/howel/Documents/GitHub/CharacterGeneratorTBH/CharacterGeneratorTBH/src/charactergeneratortbh/Helpers/RacePopulator.java</file>
-            <file>file:/C:/Users/howel/Documents/GitHub/CharacterGeneratorTBH/CharacterGeneratorTBH/src/charactergeneratortbh/Classes/Feature.java</file>
-            <file>file:/C:/Users/howel/Documents/GitHub/CharacterGeneratorTBH/CharacterGeneratorTBH/src/charactergeneratortbh/Classes/GameClass.java</file>
-            <file>file:/C:/Users/howel/Documents/GitHub/CharacterGeneratorTBH/CharacterGeneratorTBH/src/charactergeneratortbh/Classes/Race.java</file>
+            <file>file:/C:/Users/howel/Documents/GitHub/CharacterGeneratorTBH/CharacterGeneratorTBH/src/charactergeneratortbh/Control/Controller.java</file>
+            <file>file:/C:/Users/howel/Documents/GitHub/CharacterGeneratorTBH/CharacterGeneratorTBH/src/charactergeneratortbh/Classes/GameCharacter.java</file>
         </group>
     </open-files>
 </project-private>

@@ -5,14 +5,20 @@
 package charactergeneratortbh.GUI;
 
 import javax.swing.JOptionPane;
+import charactergeneratortbh.Control.Controller;
+import java.awt.CardLayout;
 
 public class MainGUI extends javax.swing.JFrame {
     
-    /**
-     * Creates new form MainGUI
-     */
-    public MainGUI() {
+    private Controller OurControl;
+    CardLayout cardLayout;
+    
+    public MainGUI(Controller C) 
+    {
+        OurControl = C;
         initComponents();
+        cardLayout = (CardLayout)(MainPanel.getLayout());
+        RunMain(this);
     }
 
     /**
@@ -24,26 +30,972 @@ public class MainGUI extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        AbilityScoreMethod = new javax.swing.ButtonGroup();
+        MainPanel = new javax.swing.JPanel();
+        Start = new javax.swing.JPanel();
+        StartTitle1 = new javax.swing.JLabel();
+        StartSub1 = new javax.swing.JLabel();
+        StartLabel1 = new javax.swing.JLabel();
+        StartLabel3 = new javax.swing.JLabel();
+        StartCN = new javax.swing.JTextField();
+        StartPN = new javax.swing.JTextField();
+        StartNextButton = new javax.swing.JButton();
+        Step1 = new javax.swing.JPanel();
+        Step1Title1 = new javax.swing.JLabel();
+        Step1NextButton = new javax.swing.JButton();
+        Step1InfoButton = new javax.swing.JButton();
+        Step1Choice2 = new javax.swing.JRadioButton();
+        Step1Choice1 = new javax.swing.JRadioButton();
+        Step1Label7 = new javax.swing.JLabel();
+        Step1Label8 = new javax.swing.JLabel();
+        Step1Label9 = new javax.swing.JLabel();
+        Step1Label10 = new javax.swing.JLabel();
+        Step1Label11 = new javax.swing.JLabel();
+        Step1Label12 = new javax.swing.JLabel();
+        Step1CustomSTR = new javax.swing.JSpinner();
+        Step1CustomDEX = new javax.swing.JSpinner();
+        Step1CustomCON = new javax.swing.JSpinner();
+        Step1CustomINT = new javax.swing.JSpinner();
+        Step1CustomWIS = new javax.swing.JSpinner();
+        Step1CustomCHA = new javax.swing.JSpinner();
+        Step1Label1 = new javax.swing.JLabel();
+        Step1Label2 = new javax.swing.JLabel();
+        Step1Label3 = new javax.swing.JLabel();
+        Step1Label4 = new javax.swing.JLabel();
+        Step1Label5 = new javax.swing.JLabel();
+        Step1Label6 = new javax.swing.JLabel();
+        Step1Score1Atrib = new javax.swing.JComboBox<>();
+        Step1Score2Atrib = new javax.swing.JComboBox<>();
+        Step1Score3Atrib = new javax.swing.JComboBox<>();
+        Step1Score4Atrib = new javax.swing.JComboBox<>();
+        Step1Score5Atrib = new javax.swing.JComboBox<>();
+        Step1Score6Atrib = new javax.swing.JComboBox<>();
+        Step1Score1 = new javax.swing.JLabel();
+        Step1Score2 = new javax.swing.JLabel();
+        Step1Score3 = new javax.swing.JLabel();
+        Step1Score4 = new javax.swing.JLabel();
+        Step1Score5 = new javax.swing.JLabel();
+        Step1Score6 = new javax.swing.JLabel();
+        Step2 = new javax.swing.JPanel();
+        Step2Title1 = new javax.swing.JLabel();
+        Step2NextButton = new javax.swing.JButton();
+        Step2InfoButton = new javax.swing.JButton();
+        Step2Description = new javax.swing.JLabel();
+        Step2RaceSelect = new javax.swing.JComboBox<>();
+        Step3 = new javax.swing.JPanel();
+        Step3Title = new javax.swing.JLabel();
+        Step3NextButton = new javax.swing.JButton();
+        Step3InfoButton = new javax.swing.JButton();
+        Step3Description = new javax.swing.JLabel();
+        Step3ClassSelect = new javax.swing.JComboBox<>();
+        Step4 = new javax.swing.JPanel();
+        Step4Title = new javax.swing.JLabel();
+        Step4NextButton = new javax.swing.JButton();
+        Step4InfoButton = new javax.swing.JButton();
+        Step4SkillsPane1 = new javax.swing.JScrollPane();
+        Step4RankedSkills = new javax.swing.JList<>();
+        Step4SkillsPane2 = new javax.swing.JScrollPane();
+        Step4Skills = new javax.swing.JList<>();
+        Step4Label1 = new javax.swing.JLabel();
+        Step4Label2 = new javax.swing.JLabel();
+        Step5 = new javax.swing.JPanel();
+        Step5Title = new javax.swing.JLabel();
+        Step5NextButton = new javax.swing.JButton();
+        Step5InfoButton = new javax.swing.JButton();
+        Step5Description = new javax.swing.JLabel();
+        Step5FeatureSelect = new javax.swing.JComboBox<>();
+        Step6 = new javax.swing.JPanel();
+        Step6Title = new javax.swing.JLabel();
+        Step6NextButton = new javax.swing.JButton();
+        Step6InfoButton = new javax.swing.JButton();
+        Step6Description = new javax.swing.JLabel();
+        Step6WeaponSelect = new javax.swing.JComboBox<>();
+        Step6Buy = new javax.swing.JButton();
+        Step6Cost = new javax.swing.JLabel();
+        Step6WeaponList = new javax.swing.JLabel();
+        Step6GoldCount = new javax.swing.JLabel();
+        Step7 = new javax.swing.JPanel();
+        Step7Title1 = new javax.swing.JLabel();
+        Step7NextButton1 = new javax.swing.JButton();
+        Step7InfoButton1 = new javax.swing.JButton();
+        Step7Description1 = new javax.swing.JLabel();
+        Step7ArmorSelect1 = new javax.swing.JComboBox<>();
+        Step7GoldCount1 = new javax.swing.JLabel();
+        Finalize = new javax.swing.JPanel();
+        FinalizeTitle = new javax.swing.JLabel();
+        FinalizeFinishButton = new javax.swing.JButton();
+        FinalizeInfoButton = new javax.swing.JButton();
+        FinalizeDetails = new javax.swing.JLabel();
+        FinalizeCharacterName = new javax.swing.JTextField();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        MainPanel.setLayout(new java.awt.CardLayout());
+
+        StartTitle1.setText("Character Generator V.1");
+
+        StartSub1.setText("Author: TBHowell");
+
+        StartLabel1.setText("Player Name:");
+
+        StartLabel3.setText("Character Name:");
+
+        StartNextButton.setText("Next");
+        StartNextButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                StartNextButtonActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout StartLayout = new javax.swing.GroupLayout(Start);
+        Start.setLayout(StartLayout);
+        StartLayout.setHorizontalGroup(
+            StartLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(StartLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(StartLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(StartTitle1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(StartSub1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 380, Short.MAX_VALUE)
+                    .addGroup(StartLayout.createSequentialGroup()
+                        .addGroup(StartLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(StartPN, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(StartCN, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(StartLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 380, Short.MAX_VALUE)
+                    .addComponent(StartLabel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 380, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, StartLayout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(StartNextButton)))
+                .addContainerGap())
+        );
+        StartLayout.setVerticalGroup(
+            StartLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(StartLayout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addComponent(StartTitle1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(StartSub1)
+                .addGap(18, 18, 18)
+                .addComponent(StartLabel1)
+                .addGap(4, 4, 4)
+                .addComponent(StartPN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(20, 20, 20)
+                .addComponent(StartLabel3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(StartCN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 344, Short.MAX_VALUE)
+                .addComponent(StartNextButton)
+                .addContainerGap())
+        );
+
+        MainPanel.add(Start, "card1");
+
+        Step1Title1.setText("Step 1: Choose Ability Scores");
+
+        Step1NextButton.setText("Next");
+        Step1NextButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Step1NextButtonActionPerformed(evt);
+            }
+        });
+
+        Step1InfoButton.setText("Info");
+
+        AbilityScoreMethod.add(Step1Choice2);
+        Step1Choice2.setText("Use Custom Ability Scores");
+
+        AbilityScoreMethod.add(Step1Choice1);
+        Step1Choice1.setSelected(true);
+        Step1Choice1.setText("Use Rolled Ability Scores");
+
+        Step1Label7.setText("Strength");
+
+        Step1Label8.setText("Dexterity");
+
+        Step1Label9.setText("Constitution");
+
+        Step1Label10.setText("Intelligence");
+
+        Step1Label11.setText("Wisdom");
+
+        Step1Label12.setText("Charisma");
+
+        Step1CustomSTR.setModel(new javax.swing.SpinnerNumberModel(2, 2, 18, 1));
+
+        Step1CustomDEX.setModel(new javax.swing.SpinnerNumberModel(2, 2, 18, 1));
+
+        Step1CustomCON.setModel(new javax.swing.SpinnerNumberModel(2, 2, 18, 1));
+
+        Step1CustomINT.setModel(new javax.swing.SpinnerNumberModel(2, 2, 18, 1));
+
+        Step1CustomWIS.setModel(new javax.swing.SpinnerNumberModel(2, 2, 18, 1));
+
+        Step1CustomCHA.setModel(new javax.swing.SpinnerNumberModel(2, 2, 18, 1));
+
+        Step1Label1.setText("Score 1:");
+
+        Step1Label2.setText("Score 2:");
+
+        Step1Label3.setText("Score 3:");
+
+        Step1Label4.setText("Score 4:");
+
+        Step1Label5.setText("Score 5:");
+
+        Step1Label6.setText("Score 6:");
+
+        Step1Score1Atrib.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Strength", "Dexterity", "Constitution", "Intelligence", "Wisdom", "Charisma" }));
+
+        Step1Score2Atrib.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Strength", "Dexterity", "Constitution", "Intelligence", "Wisdom", "Charisma" }));
+
+        Step1Score3Atrib.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Strength", "Dexterity", "Constitution", "Intelligence", "Wisdom", "Charisma" }));
+
+        Step1Score4Atrib.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Strength", "Dexterity", "Constitution", "Intelligence", "Wisdom", "Charisma" }));
+
+        Step1Score5Atrib.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Strength", "Dexterity", "Constitution", "Intelligence", "Wisdom", "Charisma" }));
+
+        Step1Score6Atrib.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Strength", "Dexterity", "Constitution", "Intelligence", "Wisdom", "Charisma" }));
+
+        Step1Score1.setText("0");
+
+        Step1Score2.setText("0");
+
+        Step1Score3.setText("0");
+
+        Step1Score4.setText("0");
+
+        Step1Score5.setText("0");
+
+        Step1Score6.setText("0");
+
+        javax.swing.GroupLayout Step1Layout = new javax.swing.GroupLayout(Step1);
+        Step1.setLayout(Step1Layout);
+        Step1Layout.setHorizontalGroup(
+            Step1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Step1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(Step1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Step1Title1, javax.swing.GroupLayout.DEFAULT_SIZE, 380, Short.MAX_VALUE)
+                    .addGroup(Step1Layout.createSequentialGroup()
+                        .addComponent(Step1InfoButton)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(Step1NextButton))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Step1Layout.createSequentialGroup()
+                        .addGroup(Step1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(Step1Choice1)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Step1Layout.createSequentialGroup()
+                                .addGroup(Step1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addGroup(Step1Layout.createSequentialGroup()
+                                        .addComponent(Step1Label3)
+                                        .addGap(4, 4, 4)
+                                        .addComponent(Step1Score3, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, Step1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, Step1Layout.createSequentialGroup()
+                                            .addComponent(Step1Label1)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(Step1Score1, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, Step1Layout.createSequentialGroup()
+                                            .addGroup(Step1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, Step1Layout.createSequentialGroup()
+                                                    .addComponent(Step1Label4)
+                                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                    .addComponent(Step1Score4, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, Step1Layout.createSequentialGroup()
+                                                    .addComponent(Step1Label5)
+                                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                    .addComponent(Step1Score5, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                            .addGap(0, 0, Short.MAX_VALUE))))
+                                .addGap(18, 18, 18)
+                                .addGroup(Step1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(Step1Score3Atrib, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(Step1Score1Atrib, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(Step1Score4Atrib, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(Step1Score5Atrib, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Step1Layout.createSequentialGroup()
+                                .addComponent(Step1Label2)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(Step1Score2, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(Step1Score2Atrib, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(Step1Layout.createSequentialGroup()
+                                .addComponent(Step1Label6)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(Step1Score6, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(Step1Score6Atrib, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(Step1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(Step1Layout.createSequentialGroup()
+                                .addGroup(Step1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(Step1Choice2)
+                                    .addGroup(Step1Layout.createSequentialGroup()
+                                        .addGroup(Step1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(Step1Label8)
+                                            .addComponent(Step1Label9)
+                                            .addComponent(Step1Label10)
+                                            .addComponent(Step1Label11)
+                                            .addComponent(Step1Label12))
+                                        .addGap(36, 36, 36)
+                                        .addGroup(Step1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(Step1CustomCON, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(Step1CustomDEX, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(Step1CustomINT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(Step1CustomWIS, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(Step1CustomCHA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addGap(11, 11, 11))
+                            .addGroup(Step1Layout.createSequentialGroup()
+                                .addComponent(Step1Label7)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(Step1CustomSTR, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(27, 27, 27)))))
+                .addContainerGap())
+        );
+        Step1Layout.setVerticalGroup(
+            Step1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Step1Layout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addComponent(Step1Title1)
+                .addGap(61, 61, 61)
+                .addGroup(Step1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(Step1Layout.createSequentialGroup()
+                        .addGroup(Step1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(Step1Label7)
+                            .addComponent(Step1CustomSTR, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(Step1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(Step1Label8)
+                            .addComponent(Step1CustomDEX, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(Step1Layout.createSequentialGroup()
+                        .addGroup(Step1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(Step1Label1)
+                            .addComponent(Step1Score1Atrib, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Step1Score1))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(Step1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(Step1Label2)
+                            .addComponent(Step1Score2Atrib, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Step1Score2))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(Step1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Step1Label3)
+                    .addComponent(Step1Score3Atrib, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Step1Label9)
+                    .addComponent(Step1CustomCON, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Step1Score3))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(Step1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Step1Label4)
+                    .addComponent(Step1Score4Atrib, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Step1Label10)
+                    .addComponent(Step1CustomINT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Step1Score4))
+                .addGap(13, 13, 13)
+                .addGroup(Step1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(Step1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(Step1Label5)
+                        .addComponent(Step1Score5))
+                    .addGroup(Step1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(Step1Label11)
+                        .addComponent(Step1CustomWIS, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Step1Score5Atrib, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(Step1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(Step1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(Step1Label6)
+                        .addComponent(Step1Score6))
+                    .addComponent(Step1Score6Atrib, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Step1Label12)
+                    .addComponent(Step1CustomCHA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 68, Short.MAX_VALUE)
+                .addGroup(Step1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Step1Choice2)
+                    .addComponent(Step1Choice1))
+                .addGap(151, 151, 151)
+                .addGroup(Step1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Step1NextButton)
+                    .addComponent(Step1InfoButton))
+                .addContainerGap())
+        );
+
+        MainPanel.add(Step1, "card2");
+
+        Step2Title1.setText("Step 2: Choose Your Race");
+
+        Step2NextButton.setText("Next");
+        Step2NextButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Step2NextButtonActionPerformed(evt);
+            }
+        });
+
+        Step2InfoButton.setText("Info");
+
+        Step2Description.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        Step2Description.setText("EMPTY");
+        Step2Description.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+
+        Step2RaceSelect.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3" }));
+        Step2RaceSelect.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Step2RaceSelectActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout Step2Layout = new javax.swing.GroupLayout(Step2);
+        Step2.setLayout(Step2Layout);
+        Step2Layout.setHorizontalGroup(
+            Step2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Step2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(Step2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Step2Description, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Step2Title1, javax.swing.GroupLayout.DEFAULT_SIZE, 380, Short.MAX_VALUE)
+                    .addGroup(Step2Layout.createSequentialGroup()
+                        .addComponent(Step2InfoButton)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(Step2NextButton))
+                    .addGroup(Step2Layout.createSequentialGroup()
+                        .addComponent(Step2RaceSelect, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
+        );
+        Step2Layout.setVerticalGroup(
+            Step2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Step2Layout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addComponent(Step2Title1)
+                .addGap(23, 23, 23)
+                .addComponent(Step2RaceSelect, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(Step2Description, javax.swing.GroupLayout.DEFAULT_SIZE, 413, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addGroup(Step2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Step2NextButton)
+                    .addComponent(Step2InfoButton))
+                .addContainerGap())
+        );
+
+        MainPanel.add(Step2, "card3");
+
+        Step3Title.setText("Step 3: Choose your Class");
+
+        Step3NextButton.setText("Next");
+        Step3NextButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Step3NextButtonActionPerformed(evt);
+            }
+        });
+
+        Step3InfoButton.setText("Info");
+
+        Step3Description.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        Step3Description.setText("EMPTY");
+        Step3Description.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+
+        Step3ClassSelect.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3" }));
+        Step3ClassSelect.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Step3ClassSelectActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout Step3Layout = new javax.swing.GroupLayout(Step3);
+        Step3.setLayout(Step3Layout);
+        Step3Layout.setHorizontalGroup(
+            Step3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Step3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(Step3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Step3Description, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Step3Title, javax.swing.GroupLayout.DEFAULT_SIZE, 380, Short.MAX_VALUE)
+                    .addGroup(Step3Layout.createSequentialGroup()
+                        .addComponent(Step3InfoButton)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(Step3NextButton))
+                    .addGroup(Step3Layout.createSequentialGroup()
+                        .addComponent(Step3ClassSelect, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
+        );
+        Step3Layout.setVerticalGroup(
+            Step3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Step3Layout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addComponent(Step3Title)
+                .addGap(23, 23, 23)
+                .addComponent(Step3ClassSelect, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(Step3Description, javax.swing.GroupLayout.DEFAULT_SIZE, 413, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addGroup(Step3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Step3NextButton)
+                    .addComponent(Step3InfoButton))
+                .addContainerGap())
+        );
+
+        MainPanel.add(Step3, "card4");
+
+        Step4Title.setText("Step 4: Choose Ranked Skills");
+
+        Step4NextButton.setText("Next");
+        Step4NextButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Step4NextButtonActionPerformed(evt);
+            }
+        });
+
+        Step4InfoButton.setText("Info");
+
+        Step4RankedSkills.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        Step4SkillsPane1.setViewportView(Step4RankedSkills);
+
+        Step4Skills.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        Step4SkillsPane2.setViewportView(Step4Skills);
+
+        Step4Label1.setText("Selected Skills");
+
+        Step4Label2.setText("Skills");
+
+        javax.swing.GroupLayout Step4Layout = new javax.swing.GroupLayout(Step4);
+        Step4.setLayout(Step4Layout);
+        Step4Layout.setHorizontalGroup(
+            Step4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Step4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(Step4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Step4SkillsPane1)
+                    .addComponent(Step4Title, javax.swing.GroupLayout.DEFAULT_SIZE, 380, Short.MAX_VALUE)
+                    .addGroup(Step4Layout.createSequentialGroup()
+                        .addComponent(Step4InfoButton)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(Step4NextButton))
+                    .addComponent(Step4SkillsPane2, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(Step4Layout.createSequentialGroup()
+                        .addGroup(Step4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(Step4Label1)
+                            .addComponent(Step4Label2))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
+        );
+        Step4Layout.setVerticalGroup(
+            Step4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Step4Layout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addComponent(Step4Title)
+                .addGap(18, 18, 18)
+                .addComponent(Step4Label1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(Step4SkillsPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 94, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addComponent(Step4Label2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(Step4SkillsPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 292, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(Step4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Step4NextButton)
+                    .addComponent(Step4InfoButton))
+                .addContainerGap())
+        );
+
+        MainPanel.add(Step4, "card5");
+
+        Step5Title.setText("Step 5: Choose your Feature");
+
+        Step5NextButton.setText("Next");
+        Step5NextButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Step5NextButtonActionPerformed(evt);
+            }
+        });
+
+        Step5InfoButton.setText("Info");
+
+        Step5Description.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        Step5Description.setText("EMPTY");
+        Step5Description.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+
+        Step5FeatureSelect.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3" }));
+        Step5FeatureSelect.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Step5FeatureSelectActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout Step5Layout = new javax.swing.GroupLayout(Step5);
+        Step5.setLayout(Step5Layout);
+        Step5Layout.setHorizontalGroup(
+            Step5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Step5Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(Step5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Step5Description, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Step5Title, javax.swing.GroupLayout.DEFAULT_SIZE, 380, Short.MAX_VALUE)
+                    .addGroup(Step5Layout.createSequentialGroup()
+                        .addComponent(Step5InfoButton)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(Step5NextButton))
+                    .addGroup(Step5Layout.createSequentialGroup()
+                        .addComponent(Step5FeatureSelect, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
+        );
+        Step5Layout.setVerticalGroup(
+            Step5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Step5Layout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addComponent(Step5Title)
+                .addGap(23, 23, 23)
+                .addComponent(Step5FeatureSelect, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(Step5Description, javax.swing.GroupLayout.DEFAULT_SIZE, 413, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addGroup(Step5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Step5NextButton)
+                    .addComponent(Step5InfoButton))
+                .addContainerGap())
+        );
+
+        MainPanel.add(Step5, "card6");
+
+        Step6Title.setText("Step 6: Buy Weapons");
+
+        Step6NextButton.setText("Next");
+        Step6NextButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Step6NextButtonActionPerformed(evt);
+            }
+        });
+
+        Step6InfoButton.setText("Info");
+
+        Step6Description.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        Step6Description.setText("EMPTY");
+        Step6Description.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+
+        Step6WeaponSelect.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3" }));
+        Step6WeaponSelect.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Step6WeaponSelectActionPerformed(evt);
+            }
+        });
+
+        Step6Buy.setText("Purchase");
+        Step6Buy.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Step6BuyActionPerformed(evt);
+            }
+        });
+
+        Step6Cost.setText("NO MONIES");
+
+        Step6WeaponList.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        Step6WeaponList.setText("UH OH SCARY OH");
+        Step6WeaponList.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        Step6WeaponList.setVerifyInputWhenFocusTarget(false);
+
+        Step6GoldCount.setText("NO MONIES YET");
+
+        javax.swing.GroupLayout Step6Layout = new javax.swing.GroupLayout(Step6);
+        Step6.setLayout(Step6Layout);
+        Step6Layout.setHorizontalGroup(
+            Step6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Step6Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(Step6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Step6WeaponList, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Step6Description, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Step6Title, javax.swing.GroupLayout.DEFAULT_SIZE, 380, Short.MAX_VALUE)
+                    .addGroup(Step6Layout.createSequentialGroup()
+                        .addComponent(Step6InfoButton)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(Step6NextButton))
+                    .addGroup(Step6Layout.createSequentialGroup()
+                        .addGroup(Step6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(Step6WeaponSelect, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(Step6Layout.createSequentialGroup()
+                                .addComponent(Step6Buy)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(Step6Cost)
+                                .addGap(66, 66, 66)
+                                .addComponent(Step6GoldCount)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
+        );
+        Step6Layout.setVerticalGroup(
+            Step6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Step6Layout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addComponent(Step6Title)
+                .addGap(23, 23, 23)
+                .addComponent(Step6WeaponSelect, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(Step6Description, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(Step6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Step6Buy)
+                    .addComponent(Step6Cost)
+                    .addComponent(Step6GoldCount))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(Step6WeaponList, javax.swing.GroupLayout.DEFAULT_SIZE, 184, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addGroup(Step6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Step6NextButton)
+                    .addComponent(Step6InfoButton))
+                .addContainerGap())
+        );
+
+        MainPanel.add(Step6, "card7");
+
+        Step7Title1.setText("Step 7: Buy Armor");
+
+        Step7NextButton1.setText("Next");
+        Step7NextButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Step7NextButton1ActionPerformed(evt);
+            }
+        });
+
+        Step7InfoButton1.setText("Info");
+
+        Step7Description1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        Step7Description1.setText("DIS EMPTY TOO :'(");
+        Step7Description1.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+
+        Step7ArmorSelect1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3" }));
+        Step7ArmorSelect1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Step7ArmorSelect1ActionPerformed(evt);
+            }
+        });
+
+        Step7GoldCount1.setText("NO MONIES UH OH");
+
+        javax.swing.GroupLayout Step7Layout = new javax.swing.GroupLayout(Step7);
+        Step7.setLayout(Step7Layout);
+        Step7Layout.setHorizontalGroup(
+            Step7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Step7Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(Step7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Step7Description1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Step7Title1, javax.swing.GroupLayout.DEFAULT_SIZE, 380, Short.MAX_VALUE)
+                    .addGroup(Step7Layout.createSequentialGroup()
+                        .addComponent(Step7InfoButton1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(Step7NextButton1))
+                    .addGroup(Step7Layout.createSequentialGroup()
+                        .addComponent(Step7ArmorSelect1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(Step7GoldCount1)
+                        .addGap(25, 25, 25)))
+                .addContainerGap())
+        );
+        Step7Layout.setVerticalGroup(
+            Step7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Step7Layout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addComponent(Step7Title1)
+                .addGap(23, 23, 23)
+                .addGroup(Step7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Step7ArmorSelect1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Step7GoldCount1))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(Step7Description1, javax.swing.GroupLayout.DEFAULT_SIZE, 413, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addGroup(Step7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Step7NextButton1)
+                    .addComponent(Step7InfoButton1))
+                .addContainerGap())
+        );
+
+        MainPanel.add(Step7, "card8");
+
+        FinalizeTitle.setText("Finalize Character");
+
+        FinalizeFinishButton.setText("Finish");
+        FinalizeFinishButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                FinalizeFinishButtonActionPerformed(evt);
+            }
+        });
+
+        FinalizeInfoButton.setText("Info");
+
+        FinalizeDetails.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        FinalizeDetails.setText("NADDA YET");
+        FinalizeDetails.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+
+        FinalizeCharacterName.setText("NO NAME YET UH OH");
+
+        javax.swing.GroupLayout FinalizeLayout = new javax.swing.GroupLayout(Finalize);
+        Finalize.setLayout(FinalizeLayout);
+        FinalizeLayout.setHorizontalGroup(
+            FinalizeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(FinalizeLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(FinalizeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(FinalizeDetails, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(FinalizeTitle, javax.swing.GroupLayout.DEFAULT_SIZE, 380, Short.MAX_VALUE)
+                    .addGroup(FinalizeLayout.createSequentialGroup()
+                        .addComponent(FinalizeInfoButton)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(FinalizeFinishButton))
+                    .addComponent(FinalizeCharacterName))
+                .addContainerGap())
+        );
+        FinalizeLayout.setVerticalGroup(
+            FinalizeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(FinalizeLayout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addComponent(FinalizeTitle)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(FinalizeCharacterName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(FinalizeDetails, javax.swing.GroupLayout.DEFAULT_SIZE, 434, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addGroup(FinalizeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(FinalizeFinishButton)
+                    .addComponent(FinalizeInfoButton))
+                .addContainerGap())
+        );
+
+        MainPanel.add(Finalize, "card9");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(MainPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addComponent(MainPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
+    private void Step2RaceSelectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Step2RaceSelectActionPerformed
+        String NewText = OurControl.GetRaceInfo(Step2RaceSelect.getSelectedIndex());
+        Step2Description.setText(NewText);
+    }//GEN-LAST:event_Step2RaceSelectActionPerformed
+
+    private void Step3ClassSelectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Step3ClassSelectActionPerformed
+        String NewText = OurControl.GetClassInfo(Step3ClassSelect.getSelectedIndex());
+        Step3Description.setText(NewText);
+    }//GEN-LAST:event_Step3ClassSelectActionPerformed
+
+    private void Step5FeatureSelectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Step5FeatureSelectActionPerformed
+       String NewText = OurControl.GetFeatureInfo(Step5FeatureSelect.getSelectedIndex());
+       Step5Description.setText(NewText);
+    }//GEN-LAST:event_Step5FeatureSelectActionPerformed
+
+    private void Step5NextButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Step5NextButtonActionPerformed
+        cardLayout.show(MainPanel, "card7");
+    }//GEN-LAST:event_Step5NextButtonActionPerformed
+
+    private void Step6NextButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Step6NextButtonActionPerformed
+        cardLayout.show(MainPanel, "card8");
+    }//GEN-LAST:event_Step6NextButtonActionPerformed
+
+    private void Step6WeaponSelectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Step6WeaponSelectActionPerformed
+        String NewText = OurControl.GetWeaponInfo(Step6WeaponSelect.getSelectedIndex());
+        String NewCost = OurControl.GetWeaponCost(Step6WeaponSelect.getSelectedIndex());
+        Step6Description.setText(NewText);
+        Step6Cost.setText(NewCost);
+    }//GEN-LAST:event_Step6WeaponSelectActionPerformed
+
+    private void Step6BuyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Step6BuyActionPerformed
+        OurControl.AddWeapon(Step6WeaponSelect.getSelectedIndex());
+        Step6GoldCount.setText(OurControl.GetGold());
+        Step6WeaponList.setText(OurControl.WeaponList);
+    }//GEN-LAST:event_Step6BuyActionPerformed
+
+    private void FinalizeFinishButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FinalizeFinishButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FinalizeFinishButtonActionPerformed
+
+    private void Step7NextButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Step7NextButton1ActionPerformed
+        cardLayout.show(MainPanel, "card9");
+    }//GEN-LAST:event_Step7NextButton1ActionPerformed
+
+    private void Step7ArmorSelect1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Step7ArmorSelect1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Step7ArmorSelect1ActionPerformed
+
+    private void StartNextButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_StartNextButtonActionPerformed
+        OurControl.StartCharacter(StartPN.getText(), StartCN.getText());
+        
+        
+        OurControl.RollAbilities();
+        int[] OurAS = OurControl.GetAS();
+        Step1Score1.setText(""+OurAS[0]);
+        Step1Score2.setText(""+OurAS[1]);
+        Step1Score3.setText(""+OurAS[2]);
+        Step1Score4.setText(""+OurAS[3]);
+        Step1Score5.setText(""+OurAS[4]);
+        Step1Score6.setText(""+OurAS[5]);
+        cardLayout.show(MainPanel, "card2");
+    }//GEN-LAST:event_StartNextButtonActionPerformed
+
+    private void Step1NextButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Step1NextButtonActionPerformed
+        int[] NewAS = new int[] {0,0,0,0,0,0};
+        int[] OurAS = OurControl.GetAS();
+        
+        if(Step1Choice1.isSelected())
+        {
+            NewAS[Step1Score1Atrib.getSelectedIndex()] = OurAS[0];
+            NewAS[Step1Score2Atrib.getSelectedIndex()] = OurAS[1];
+            NewAS[Step1Score3Atrib.getSelectedIndex()] = OurAS[2];
+            NewAS[Step1Score4Atrib.getSelectedIndex()] = OurAS[3];
+            NewAS[Step1Score5Atrib.getSelectedIndex()] = OurAS[4];
+            NewAS[Step1Score6Atrib.getSelectedIndex()] = OurAS[5];
+            
+            for(int i = 0; i < 6; i ++)
+            {
+                if(NewAS[i] == 0)
+                {
+                    JOptionPane.showMessageDialog(null, "Must use each Ability");
+                    return;
+                }
+            }
+        }
+        else
+        {
+            NewAS[0] = (int)Step1CustomSTR.getValue();
+            NewAS[1] = (int)Step1CustomSTR.getValue();
+            NewAS[2] = (int)Step1CustomSTR.getValue();
+            NewAS[3] = (int)Step1CustomSTR.getValue();
+            NewAS[4] = (int)Step1CustomSTR.getValue();
+            NewAS[5] = (int)Step1CustomSTR.getValue();
+        }
+        
+        OurControl.SetAS(NewAS);
+        cardLayout.show(MainPanel, "card3");
+    }//GEN-LAST:event_Step1NextButtonActionPerformed
+
+    private void Step2NextButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Step2NextButtonActionPerformed
+        cardLayout.show(MainPanel, "card4");
+    }//GEN-LAST:event_Step2NextButtonActionPerformed
+
+    private void Step3NextButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Step3NextButtonActionPerformed
+        cardLayout.show(MainPanel, "card5");
+    }//GEN-LAST:event_Step3NextButtonActionPerformed
+
+    private void Step4NextButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Step4NextButtonActionPerformed
+        cardLayout.show(MainPanel, "card6");
+    }//GEN-LAST:event_Step4NextButtonActionPerformed
+
+    public void RunMain(MainGUI GUI) 
+    {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -68,14 +1020,113 @@ public class MainGUI extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new MainGUI().setVisible(true);
+        java.awt.EventQueue.invokeLater(new Runnable() 
+        {
+            public void run() 
+            {
+                GUI.setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.ButtonGroup AbilityScoreMethod;
+    private javax.swing.JPanel Finalize;
+    private javax.swing.JTextField FinalizeCharacterName;
+    private javax.swing.JLabel FinalizeDetails;
+    private javax.swing.JButton FinalizeFinishButton;
+    private javax.swing.JButton FinalizeInfoButton;
+    private javax.swing.JLabel FinalizeTitle;
+    private javax.swing.JPanel MainPanel;
+    private javax.swing.JPanel Start;
+    private javax.swing.JTextField StartCN;
+    private javax.swing.JLabel StartLabel1;
+    private javax.swing.JLabel StartLabel3;
+    private javax.swing.JButton StartNextButton;
+    private javax.swing.JTextField StartPN;
+    private javax.swing.JLabel StartSub1;
+    private javax.swing.JLabel StartTitle1;
+    private javax.swing.JPanel Step1;
+    private javax.swing.JRadioButton Step1Choice1;
+    private javax.swing.JRadioButton Step1Choice2;
+    private javax.swing.JSpinner Step1CustomCHA;
+    private javax.swing.JSpinner Step1CustomCON;
+    private javax.swing.JSpinner Step1CustomDEX;
+    private javax.swing.JSpinner Step1CustomINT;
+    private javax.swing.JSpinner Step1CustomSTR;
+    private javax.swing.JSpinner Step1CustomWIS;
+    private javax.swing.JButton Step1InfoButton;
+    private javax.swing.JLabel Step1Label1;
+    private javax.swing.JLabel Step1Label10;
+    private javax.swing.JLabel Step1Label11;
+    private javax.swing.JLabel Step1Label12;
+    private javax.swing.JLabel Step1Label2;
+    private javax.swing.JLabel Step1Label3;
+    private javax.swing.JLabel Step1Label4;
+    private javax.swing.JLabel Step1Label5;
+    private javax.swing.JLabel Step1Label6;
+    private javax.swing.JLabel Step1Label7;
+    private javax.swing.JLabel Step1Label8;
+    private javax.swing.JLabel Step1Label9;
+    private javax.swing.JButton Step1NextButton;
+    private javax.swing.JLabel Step1Score1;
+    private javax.swing.JComboBox<String> Step1Score1Atrib;
+    private javax.swing.JLabel Step1Score2;
+    private javax.swing.JComboBox<String> Step1Score2Atrib;
+    private javax.swing.JLabel Step1Score3;
+    private javax.swing.JComboBox<String> Step1Score3Atrib;
+    private javax.swing.JLabel Step1Score4;
+    private javax.swing.JComboBox<String> Step1Score4Atrib;
+    private javax.swing.JLabel Step1Score5;
+    private javax.swing.JComboBox<String> Step1Score5Atrib;
+    private javax.swing.JLabel Step1Score6;
+    private javax.swing.JComboBox<String> Step1Score6Atrib;
+    private javax.swing.JLabel Step1Title1;
+    private javax.swing.JPanel Step2;
+    private javax.swing.JLabel Step2Description;
+    private javax.swing.JButton Step2InfoButton;
+    private javax.swing.JButton Step2NextButton;
+    private javax.swing.JComboBox<String> Step2RaceSelect;
+    private javax.swing.JLabel Step2Title1;
+    private javax.swing.JPanel Step3;
+    private javax.swing.JComboBox<String> Step3ClassSelect;
+    private javax.swing.JLabel Step3Description;
+    private javax.swing.JButton Step3InfoButton;
+    private javax.swing.JButton Step3NextButton;
+    private javax.swing.JLabel Step3Title;
+    private javax.swing.JPanel Step4;
+    private javax.swing.JButton Step4InfoButton;
+    private javax.swing.JLabel Step4Label1;
+    private javax.swing.JLabel Step4Label2;
+    private javax.swing.JButton Step4NextButton;
+    private javax.swing.JList<String> Step4RankedSkills;
+    private javax.swing.JList<String> Step4Skills;
+    private javax.swing.JScrollPane Step4SkillsPane1;
+    private javax.swing.JScrollPane Step4SkillsPane2;
+    private javax.swing.JLabel Step4Title;
+    private javax.swing.JPanel Step5;
+    private javax.swing.JLabel Step5Description;
+    private javax.swing.JComboBox<String> Step5FeatureSelect;
+    private javax.swing.JButton Step5InfoButton;
+    private javax.swing.JButton Step5NextButton;
+    private javax.swing.JLabel Step5Title;
+    private javax.swing.JPanel Step6;
+    private javax.swing.JButton Step6Buy;
+    private javax.swing.JLabel Step6Cost;
+    private javax.swing.JLabel Step6Description;
+    private javax.swing.JLabel Step6GoldCount;
+    private javax.swing.JButton Step6InfoButton;
+    private javax.swing.JButton Step6NextButton;
+    private javax.swing.JLabel Step6Title;
+    private javax.swing.JLabel Step6WeaponList;
+    private javax.swing.JComboBox<String> Step6WeaponSelect;
+    private javax.swing.JPanel Step7;
+    private javax.swing.JComboBox<String> Step7ArmorSelect1;
+    private javax.swing.JLabel Step7Description1;
+    private javax.swing.JLabel Step7GoldCount1;
+    private javax.swing.JButton Step7InfoButton1;
+    private javax.swing.JButton Step7NextButton1;
+    private javax.swing.JLabel Step7Title1;
     // End of variables declaration//GEN-END:variables
     
     public void ErrorMessage(String Error)

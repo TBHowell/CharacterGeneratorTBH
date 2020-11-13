@@ -6,8 +6,8 @@ package charactergeneratortbh.Classes;
 
 public class Armor 
 {
-    String AN; // Armor Name
-    String AD; // Armor Description
+    public String AN; // Armor Name
+    public String AD; // Armor Description
     int ACB; // Armor Class Bonus
     int SFC; // Spell Failure Chance
     int MDB; // Max Dex Bonus

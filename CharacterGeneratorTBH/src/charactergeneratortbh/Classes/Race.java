@@ -11,8 +11,8 @@ import java.util.ArrayList;
 public class Race 
 {
     Random Roller = new Random(); // A random object to do our dice rolls
-    String RN; // Race Name
-    String RD; // Race Description
+    public String RN; // Race Name
+    public String RD; // Race Description
     int[] A; /* Age Data
                 For this array 0 index is starting age, 1 is which die to roll
                 for additional years, 2 is how many of those dice to roll, 3 is

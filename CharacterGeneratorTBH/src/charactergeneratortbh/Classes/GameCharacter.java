@@ -5,13 +5,11 @@
 
 package charactergeneratortbh.Classes;
 
-import java.util.Random;
 import java.util.ArrayList;
 import java.util.List;
 
 public class GameCharacter 
 {
-    Random Roller = new Random(); // Dice roller for determining certain stats
     public List<Feature> CF = new ArrayList<>(); // Character Features
     public Skill[] CS; // Character Skills
     public int[] AS; // Ability Scores
@@ -29,6 +27,7 @@ public class GameCharacter
     // Creates a new character with the character and player name specified in the start of creation
     public GameCharacter(String cn, String pn)
     {
+        CD = new String[] {"","",""};
         CD[0] = cn;
         CD[1] = pn;
     }
@@ -36,6 +35,7 @@ public class GameCharacter
     // Creates a new character with only the player name specified in the start of creation
     public GameCharacter(String pn)
     {
+        CD = new String[] {"","",""};
         CD[0] = "Character Name Here";
         CD[1] = pn;
     }
