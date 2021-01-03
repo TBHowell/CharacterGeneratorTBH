@@ -934,7 +934,6 @@ public class MainGUI extends javax.swing.JFrame {
     private void StartNextButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_StartNextButtonActionPerformed
         OurControl.StartCharacter(StartPN.getText(), StartCN.getText());
         
-        
         OurControl.RollAbilities();
         int[] OurAS = OurControl.GetAS();
         Step1Score1.setText(""+OurAS[0]);

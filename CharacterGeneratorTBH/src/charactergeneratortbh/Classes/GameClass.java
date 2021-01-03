@@ -9,17 +9,17 @@ import java.util.ArrayList;
 
 public class GameClass 
 {
-    public String CN; // Class Name
-    public String CD; // Class Description
-    public int HD; // Class Hit Die
-    List<String> SK = new ArrayList<>(); // Class Skills
-    public int SR; // Skill Ranks
-    int BAB; // Base Attack Bonus
-    int[] SV; // Saving Throw Bonuses
-    public List<String> F = new ArrayList<>(); // Class Features
-    public int[] W; // Wealth
-    List<String> P = new ArrayList<>(); // Weapon and Armor Proficiencies
-    AbilityScore AB; // Weapon Ability Score Modifier
+    private String CN; // Class Name
+    private String CD; // Class Description
+    private int HD; // Class Hit Die
+    private List<String> SK = new ArrayList<>(); // Class Skills
+    private int SR; // Skill Ranks
+    private int BAB; // Base Attack Bonus
+    private int[] SV; // Saving Throw Bonuses
+    private List<String> F = new ArrayList<>(); // Class Features
+    private int[] W; // Wealth
+    private List<String> P = new ArrayList<>(); // Weapon and Armor Proficiencies
+    private AbilityScore AB; // Weapon Ability Score Modifier
     
     //Default constructor that creates an invalid class, should somehow a new class be created without data
     public GameClass()
@@ -50,5 +50,51 @@ public class GameClass
         this.W = w;
         this.P = p; 
         this.AB = ab;
+    }
+    
+    //Getter
+    public String getName()
+    {
+        return CN;
+    }
+    
+    public String getDesc()
+    {
+        return CD;
+    }
+    
+    public int getHD()
+    {
+        return HD;
+    }
+    
+    public int getSR()
+    {
+        return SR;
+    }
+    
+    public List<String> getF()
+    {
+        return F;
+    }
+    
+    public int[] getW()
+    {
+        return W;
+    }
+    
+    public int getBAB()
+    {
+        return BAB;
+    }
+    
+    public AbilityScore getAB()
+    {
+        return AB;
+    }
+    
+    public int[] getSV()
+    {
+        return SV;
     }
 }

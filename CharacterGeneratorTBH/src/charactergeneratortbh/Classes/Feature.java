@@ -9,13 +9,13 @@ import java.util.List;
 
 public class Feature 
 {
-    public String N; // Feature Name
-    public String D; // Feature Description
-    boolean MV; // Modifies a Value
-    boolean MS; // Modifies a Skill
-    boolean MA; // Modifies another Attribute
-    List<String> MVN = new ArrayList<>(); // Modified Value(s) Name
-    int M; // Modifier
+    private String N; // Feature Name
+    private String D; // Feature Description
+    private boolean MV; // Modifies a Value
+    private boolean MS; // Modifies a Skill
+    private boolean MA; // Modifies another Attribute
+    private List<String> MVN = new ArrayList<>(); // Modified Value(s) Name
+    private int M; // Modifier
     
     //Defalut Constructor that creates an invalid feature, should somehow a new feature be created without data
     public Feature()
@@ -39,5 +39,31 @@ public class Feature
         this.MA = ma;
         this.MVN = mvn;
         this.M = m;
+    }
+    
+    //Getter methods
+    public String getName()
+    {
+        return N;
+    }
+    
+    public String getDesc()
+    {
+        return D;
+    }
+    
+    public boolean getMV()
+    {
+        return MV;
+    }
+    
+    public boolean getMS()
+    {
+        return MS;
+    }
+    
+    public boolean getMA()
+    {
+        return MA;
     }
 }

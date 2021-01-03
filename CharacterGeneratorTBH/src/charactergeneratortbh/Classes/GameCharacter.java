@@ -43,13 +43,13 @@ public class GameCharacter
     // Applies any modification of skill or other attribute from the Feature
     public void ApplyFeature(Feature F)
     {
-        if(F.MV)
+        if(F.getMV())
         {
-            if(F.MS)
+            if(F.getMS())
             {
                 //TODO: Add logic to find skill modified and modify it
             }
-            else if (F.MA)
+            else if (F.getMA())
             {
                 //TODO: Add logic to find attribute and modify it
             }
@@ -59,26 +59,29 @@ public class GameCharacter
     // Handler to calculate the characters combat modifiers
     public void CalcCombat()
     {
-        CCS[0] = CC.BAB;
-        CCS[1] = AM[0] + CC.BAB;
-        CCS[2] = 10 + CC.BAB + AM[0] + AM[1] + CR.GetSizeMod(true);
-        CCS[3] = CC.BAB + AM[CC.AB.ordinal()];
-        CCS[4] = CC.BAB + AM[1];
+        int BAB = CC.getBAB();
+        CCS[0] = BAB;
+        CCS[1] = AM[0] + BAB;
+        CCS[2] = 10 + BAB + AM[0] + AM[1] + CR.GetSizeMod(true);
+        CCS[3] = BAB + AM[CC.getAB().ordinal()];
+        CCS[4] = BAB + AM[1];
     }
     
     // Handler to calculate the characters combat modifiers
     public void CalcDefense()
-    {
-        int DB = GetACDexBonus(CA[0].MDB);
-        if (GetACDexBonus(CA[1].MDB) > DB)
-            DB = GetACDexBonus(CA[1].MDB);
+    {   
+        int[] SV = CC.getSV();
         
-        CDS[0] = 10 + CR.GetSizeMod(true) + CA[0].ACB + CA[1].ACB + DB;
+        int DB = GetACDexBonus(CA[0].getMDB());
+        if (GetACDexBonus(CA[1].getMDB()) > DB)
+            DB = GetACDexBonus(CA[1].getMDB());
+        
+        CDS[0] = 10 + CR.GetSizeMod(true) + CA[0].getACB() + CA[1].getACB() + DB;
         CDS[1] = 10 + CR.GetSizeMod(true) + DB;
-        CDS[2] = 10 + CR.GetSizeMod(true) + CA[0].ACB + CA[1].ACB;
-        CDS[3] = AM[2] + CC.SV[0];
-        CDS[4] = AM[1] + CC.SV[1];
-        CDS[5] = AM[4] + CC.SV[2];
+        CDS[2] = 10 + CR.GetSizeMod(true) + CA[0].getACB() + CA[1].getACB();
+        CDS[3] = AM[2] + SV[0];
+        CDS[4] = AM[1] + SV[1];
+        CDS[5] = AM[4] + SV[2];
     }
     
     // Handler to determine what dexterity bonus to grant for Armor Class calculations

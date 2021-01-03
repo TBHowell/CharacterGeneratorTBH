@@ -6,17 +6,17 @@ package charactergeneratortbh.Classes;
 
 public class Weapon 
 {
-    public String WN; // Weapon Name
-    public String WD; // Weapon Description
-    int THB; // To Hit Bonus
-    int DB; // Damage Bonus
-    int DD; // Damage Die
-    int WR; // Weapon Range (if applicable)
-    int WA; // Weapon Ammo (if applicable)
-    public int WP; // Weapon Price in Gold
-    boolean WT; // Weapon Type (Ranged/Melee) 
-    char DT; // Damage Type
-    String WC; // Weapon Category (Simple/Martial/Natural)
+    private String WN; // Weapon Name
+    private String WD; // Weapon Description
+    private int THB; // To Hit Bonus
+    private int DB; // Damage Bonus
+    private int DD; // Damage Die
+    private int WR; // Weapon Range (if applicable)
+    private int WA; // Weapon Ammo (if applicable)
+    private int WP; // Weapon Price in Gold
+    private boolean WT; // Weapon Type (Ranged/Melee) 
+    private char DT; // Damage Type
+    private String WC; // Weapon Category (Simple/Martial/Natural)
     
     //Defalut Constructor that creates an invalid weapon, should somehow a new weapon be created without data
     public Weapon()
@@ -59,6 +59,22 @@ public class Weapon
     public void CalcTHB (int thb)
     {
         THB = thb;
+    }
+    
+    //Getter methods
+    public String getName()
+    {
+        return WN;
+    }
+    
+    public String getDesc()
+    {
+        return WD;
+    }
+    
+    public int getPrice()
+    {
+        return WP;
     }
     
 }

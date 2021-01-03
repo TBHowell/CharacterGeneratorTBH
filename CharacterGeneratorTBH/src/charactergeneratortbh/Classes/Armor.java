@@ -6,14 +6,15 @@ package charactergeneratortbh.Classes;
 
 public class Armor 
 {
-    public String AN; // Armor Name
-    public String AD; // Armor Description
-    int ACB; // Armor Class Bonus
-    int SFC; // Spell Failure Chance
-    int MDB; // Max Dex Bonus
-    int MP; // Movement Penalty
-    int AP; // Armor Price
-    String AT; //Armor Type
+    private String AN; // Armor Name
+    private String AD; // Armor Description
+    private int ACB; // Armor Class Bonus
+    private int SFC; // Spell Failure Chance
+    private int MDB; // Max Dex Bonus
+    private int MP; // Movement Penalty
+    private int AP; // Armor Price
+    private String AT; //Armor Type
+            
     
     //Defalut Constructor that creates an invalid armor, should somehow a new armor be created without data
     public Armor()
@@ -39,5 +40,38 @@ public class Armor
         this.MP = mp;
         this.AP = ap;
         this.AT = at;
+    }
+    
+    
+    //Getter methods
+    public String getName()
+    {
+        return AN;
+    }
+    
+    public String getDesc()
+    {
+        return AD;
+    }
+    
+    public int getMDB()
+    {
+        return MDB;
+    }
+    
+    public int getACB()
+    {
+        return ACB;
+    }
+    
+    //Setter methods
+    public void setName(String an)
+    {
+        AN = an;
+    }
+    
+    public void setDesc(String ad)
+    {
+        AD = ad;
     }
 }

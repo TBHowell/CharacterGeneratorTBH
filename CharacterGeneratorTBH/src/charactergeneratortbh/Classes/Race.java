@@ -10,28 +10,28 @@ import java.util.ArrayList;
 
 public class Race 
 {
-    Random Roller = new Random(); // A random object to do our dice rolls
-    public String RN; // Race Name
-    public String RD; // Race Description
-    int[] A; /* Age Data
+    private Random Roller = new Random(); // A random object to do our dice rolls
+    private String RN; // Race Name
+    private String RD; // Race Description
+    private int[] A; /* Age Data
                 For this array 0 index is starting age, 1 is which die to roll
                 for additional years, 2 is how many of those dice to roll, 3 is
                 the year multiplyer to apply to the dice roll */
-    int [] H; /* Height Data
+    private int [] H; /* Height Data
                  For this array 0 index is starting height, 1 is which die to
                  roll for additional inches, 2 is how many of those dice to 
                 roll, 3 is the inches multiplyer to apply to the dice roll.
             */
-    int SP; // Speed
-    String SZ; // Size
-    List<String> L = new ArrayList<>(); /* Languages
+    private int SP; // Speed
+    private String SZ; // Size
+    private List<String> L = new ArrayList<>(); /* Languages
                    For this array 0 to LKL are already known languages, every
                    index after is possible languages to choose from if the 
                    character's intelligence is high enough */
-    int[] M; /* Ability Modifiers 
+    private int[] M; /* Ability Modifiers 
                 For this array 0 index is STR, 1 is DEX, 2 is CON, 3 is INT,
                 4 is WIS, 5 is CHA */
-    public List<String> F = new ArrayList<>(); // Race Features
+    List<String> F = new ArrayList<>(); // Race Features
     String V; // Vision Type
     
     //Defalut Constructor that creates an invalid race, should somehow a new race be created without data
@@ -104,5 +104,21 @@ public class Race
     public int GetSizeMod(boolean GS)
     {
         return 0;
+    }
+    
+    //Getter methods
+    public String getName()
+    {
+        return RN;
+    }
+    
+    public String getDesc()
+    {
+        return RD;
+    }
+    
+    public List<String> getF()
+    {
+        return F;
     }
 }

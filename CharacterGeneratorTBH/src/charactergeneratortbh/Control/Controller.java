@@ -62,35 +62,35 @@ public class Controller
         List<String> temp = new ArrayList<>();
         for(int i = 0; i < OurRaces.size(); i++)
         {
-            temp.add(OurRaces.get(i).RN);
+            temp.add(OurRaces.get(i).getName());
         }
         Races = new String[temp.size()];
         Races = temp.toArray(Races);
         temp = new ArrayList<>();
         for(int i = 0; i < OurClasses.size(); i++)
         {
-            temp.add(OurClasses.get(i).CN);
+            temp.add(OurClasses.get(i).getName());
         }
         Classes = new String[temp.size()];
         Classes = temp.toArray(Classes);
         temp = new ArrayList<>();
         for(int i = 0; i <OurFeatures.size(); i++)
         {
-            temp.add(OurFeatures.get(i).N);
+            temp.add(OurFeatures.get(i).getName());
         }
         Features = new String[temp.size()];
         Features = temp.toArray(Features);
         temp = new ArrayList<>();
         for(int i = 0; i < OurWeapons.size(); i++)
         {
-            temp.add(OurWeapons.get(i).WN);
+            temp.add(OurWeapons.get(i).getName());
         }
         Weapons = new String[temp.size()];
         Weapons = temp.toArray(Weapons);
         temp = new ArrayList<>();
         for(int i = 0; i < OurArmor.size(); i++)
         {
-            temp.add(OurArmor.get(i).AN);
+            temp.add(OurArmor.get(i).getName());
         }
         Armors = new String[temp.size()];
         Armors = temp.toArray(Armors);
@@ -131,16 +131,16 @@ public class Controller
             OurCharacter.CD[3] = feet + "'" + inches + "\"";
         }
         
-        AddFeatures(R.F);
+        AddFeatures(R.getF());
     }
     
     public void ThirdStage(GameClass C)
     {
         OurCharacter.CC = C;
-        OurCharacter.CH = C.HD;
+        OurCharacter.CH = C.getHD();
         OurCharacter.CalcCombat();
-        AddFeatures(C.F);
-        OurCharacter.CM = C.W;
+        AddFeatures(C.getF());
+        OurCharacter.CM = C.getW();
     }
     
     public void FourthStage(List<String> sn)
@@ -149,9 +149,10 @@ public class Controller
         
         for(int i = 0; i < OurCharacter.CS.length; i++)
         {
-            if(OurCharacter.CS[i].SN.equals(sn.get(ri)))
+            if(OurCharacter.CS[i].getName().equals(sn.get(ri)))
             {
-                OurCharacter.CS[i].R += 1;
+                int r = OurCharacter.CS[i].getR();
+                OurCharacter.CS[i].setR(r + 1);
                 ri++;
             }
         }
@@ -186,7 +187,7 @@ public class Controller
        
        for(int i = 0; i < add.size(); i++)
        {
-           if(OurFeatures.get(FI).N.equals(add.get(i)))
+           if(OurFeatures.get(FI).getName().equals(add.get(i)))
                NF.add(OurFeatures.get(FI));
            
            FI++;
@@ -197,43 +198,43 @@ public class Controller
     
     public String GetRaceInfo(int index)
     {
-        String Desc = OurRaces.get(index).RD;
+        String Desc = OurRaces.get(index).getDesc();
         return Desc;
     }
     
     public String GetClassInfo(int index)
     {
-        String Desc = OurClasses.get(index).CD;
+        String Desc = OurClasses.get(index).getDesc();
         return Desc;
     }
     
     public int GetSkillRanks()
     {
-        int SR = OurCharacter.CC.SR + OurCharacter.AM[3];
+        int SR = OurCharacter.CC.getSR() + OurCharacter.AM[3];
         return SR;
     }
     
     public String GetFeatureInfo(int index)
     {
-        String Desc = OurFeatures.get(index).D;
+        String Desc = OurFeatures.get(index).getDesc();
         return Desc;
     }
     
     public String GetWeaponInfo(int index)
     {
-        String Desc = OurWeapons.get(index).WD;
+        String Desc = OurWeapons.get(index).getDesc();
         return Desc;
     }
     
     public String GetArmorInfo(int index)
     {
-        String Desc = OurArmor.get(index).AD;
+        String Desc = OurArmor.get(index).getDesc();
         return Desc;
     }
     
     public String GetWeaponCost(int index)
     {
-        String Price = OurWeapons.get(index).WP + " Gold";
+        String Price = OurWeapons.get(index).getPrice() + " Gold";
         return Price;
     }
     
@@ -244,9 +245,9 @@ public class Controller
     
     public void AddWeapon(int index)
     {
-        WeaponList += OurWeapons.get(index).WN + "\n";
+        WeaponList += OurWeapons.get(index).getName() + "\n";
         OurCharacter.CW.add(OurWeapons.get(index));
-        OurCharacter.CM[1] -= OurWeapons.get(index).WP;
+        OurCharacter.CM[1] -= OurWeapons.get(index).getPrice();
     }
     
     public String FinalCharacterDetails()
