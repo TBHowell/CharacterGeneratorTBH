@@ -17,6 +17,7 @@ public class SkillPopulator
 {
 // An array list of Skill so that we can dynamically fill the array
     private List<Skill> Skills = new ArrayList<>();
+    private List<String> SkillNames = new ArrayList<>();
     
     public SkillPopulator(String path) throws FileNotFoundException
     {
@@ -46,6 +47,8 @@ public class SkillPopulator
                 
                 //Only approach this if no error is thrown, create a new skill with collected data and put it in the list
                 Skills.add(new Skill(NSD, ASD));
+                SkillNames.add(NSD);
+                
             }
             //If on the 0th line fill the name data
             else if(lineCounter == 0)
@@ -71,5 +74,10 @@ public class SkillPopulator
     public List<Skill> getSkills()
     {
         return Skills;
-    }    
+    }
+
+    public List<String> getSkillNames()
+    {
+        return SkillNames;
+    }
 }

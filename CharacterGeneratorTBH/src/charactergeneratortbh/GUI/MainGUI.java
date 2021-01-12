@@ -467,7 +467,7 @@ public class MainGUI extends javax.swing.JFrame {
                 .addGap(23, 23, 23)
                 .addComponent(Step2RaceSelect, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Step2Description, javax.swing.GroupLayout.DEFAULT_SIZE, 413, Short.MAX_VALUE)
+                .addComponent(Step2Description, javax.swing.GroupLayout.DEFAULT_SIZE, 417, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
                 .addGroup(Step2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Step2NextButton)
@@ -975,22 +975,51 @@ public class MainGUI extends javax.swing.JFrame {
             NewAS[3] = (int)Step1CustomSTR.getValue();
             NewAS[4] = (int)Step1CustomSTR.getValue();
             NewAS[5] = (int)Step1CustomSTR.getValue();
-        }
-        
+        }       
         OurControl.SetAS(NewAS);
+        
+        Step2RaceSelect.setModel(new javax.swing.DefaultComboBoxModel<>(OurControl.Races));
+        String NewText = OurControl.GetRaceInfo(Step2RaceSelect.getSelectedIndex());
+        Step2Description.setText(NewText);
+        
         cardLayout.show(MainPanel, "card3");
     }//GEN-LAST:event_Step1NextButtonActionPerformed
 
     private void Step2NextButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Step2NextButtonActionPerformed
+        OurControl.SecondStage(Step2RaceSelect.getSelectedIndex(), 0, 0);
+        
+        Step3ClassSelect.setModel(new javax.swing.DefaultComboBoxModel<>(OurControl.Classes));
+        String NewText = OurControl.GetClassInfo(Step3ClassSelect.getSelectedIndex());
+        Step3Description.setText(NewText);
+        
         cardLayout.show(MainPanel, "card4");
     }//GEN-LAST:event_Step2NextButtonActionPerformed
 
     private void Step3NextButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Step3NextButtonActionPerformed
+        OurControl.ThirdStage(Step3ClassSelect.getSelectedIndex());
+        
+        Step4RankedSkills.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = OurControl.getSkills();
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        Step4Skills.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = OurControl.getSkills();
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        
         cardLayout.show(MainPanel, "card5");
     }//GEN-LAST:event_Step3NextButtonActionPerformed
 
     private void Step4NextButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Step4NextButtonActionPerformed
         cardLayout.show(MainPanel, "card6");
+        
+        Step5FeatureSelect.setModel(new javax.swing.DefaultComboBoxModel<>(OurControl.Features));
+        String NewText = OurControl.GetFeatureInfo(Step5FeatureSelect.getSelectedIndex());
+        Step5Description.setText(NewText);
+        
+        
     }//GEN-LAST:event_Step4NextButtonActionPerformed
 
     public void RunMain(MainGUI GUI) 

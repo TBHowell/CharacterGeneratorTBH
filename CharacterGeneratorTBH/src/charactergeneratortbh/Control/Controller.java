@@ -27,6 +27,7 @@ public class Controller
     public String WeaponList;
     public String[] Races;
     public String[] Classes;
+    private List<String> Skills = new ArrayList<>();
     public String[] Features;
     public String[] Weapons;
     public String[] Armors;
@@ -47,6 +48,7 @@ public class Controller
             RacePopulator RP = new RacePopulator(path+"//Races.txt");
             ClassPopulator CP = new ClassPopulator(path +"//Classes.txt");
             OurSkills = SP.getSkills();
+            Skills = SP.getSkillNames();
             OurFeatures = FP.getFeatures();
             OurWeapons = WP.getWeapons();
             OurArmor = AP.getArmor();
@@ -109,8 +111,9 @@ public class Controller
         OurCharacter.AS = new int[] {str,dex,con,in,wis,cha};
     }
     
-    public void SecondStage(Race R, int A, int H)
+    public void SecondStage(int Ri, int A, int H)
     {
+        Race R = OurRaces.get(Ri);
         OurCharacter.CR = R;
         if (A >= 0)
             OurCharacter.CD[2] = A + "";
@@ -134,8 +137,9 @@ public class Controller
         AddFeatures(R.getF());
     }
     
-    public void ThirdStage(GameClass C)
+    public void ThirdStage(int Ci)
     {
+        GameClass C = OurClasses.get(Ci);
         OurCharacter.CC = C;
         OurCharacter.CH = C.getHD();
         OurCharacter.CalcCombat();
@@ -199,37 +203,37 @@ public class Controller
     public String GetRaceInfo(int index)
     {
         String Desc = OurRaces.get(index).getDesc();
-        return Desc;
+        return fieldFormat(Desc);
     }
     
     public String GetClassInfo(int index)
     {
         String Desc = OurClasses.get(index).getDesc();
-        return Desc;
+        return fieldFormat(Desc);
     }
     
     public int GetSkillRanks()
     {
-        int SR = OurCharacter.CC.getSR() + OurCharacter.AM[3];
+        int SR = OurCharacter.CC.getSR() + OurCharacter.CalcAM(3);
         return SR;
     }
     
     public String GetFeatureInfo(int index)
     {
         String Desc = OurFeatures.get(index).getDesc();
-        return Desc;
+        return fieldFormat(Desc);
     }
     
     public String GetWeaponInfo(int index)
     {
         String Desc = OurWeapons.get(index).getDesc();
-        return Desc;
+        return fieldFormat(Desc);
     }
     
     public String GetArmorInfo(int index)
     {
         String Desc = OurArmor.get(index).getDesc();
-        return Desc;
+        return fieldFormat(Desc);
     }
     
     public String GetWeaponCost(int index)
@@ -277,8 +281,21 @@ public class Controller
         return AS;
     }
     
+    public String[] getSkills()
+    {
+        String[] ret = new String[Skills.size()];
+        ret = Skills.toArray(ret);
+        return ret;
+    }
+    
     public void SetAS(int[] OurAS)
     {
         OurCharacter.AS = OurAS;
+    }
+    
+    //Helper to automatically force text wrap and other helpful html formating for text onto sent out descriptions
+    private String fieldFormat(String toFormat)
+    {
+        return "<html><p>" + toFormat + "<html><p>";
     }
 }
